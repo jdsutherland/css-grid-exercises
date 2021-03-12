@@ -16,11 +16,11 @@
           <p>Pretty Good Tacos!</p>
         </header>
         <div class="cta cta1">
-          <p class="price">$1.99</p>
+          <p class="price">1.99</p>
           <p>Tacos</p>
         </div>
         <div class="cta cta2">
-          <p class="price">$3.99</p>
+          <p class="price">3.99</p>
           <p>Kombucha</p>
         </div>
       </div>
@@ -99,6 +99,14 @@
     </div>
 
     <script>
+      const navButton = document.querySelector('button[aria-expanded]');
+
+      function toggleNav({ target }) {
+        const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+        navButton.setAttribute('aria-expanded', !expanded);
+      }
+
+      navButton.addEventListener('click', toggleNav);
     </script>
   </body>
 </html>
